@@ -1,6 +1,5 @@
 let favoriteSnack = "poptarts"; // Global scope variable
 
-
 function classroom() {
     let favoriteToy = "tomagachi"; // Local scope variable
     console.log(favoriteSnack); // Accessing global variable
@@ -9,4 +8,6 @@ function classroom() {
 
 classroom(); // Output: poptarts
 
-console.log("global scope", favoriteToy); // Error: favoriteToy is not defined (local variable cannot be accessed outside the function)
+// console.log("global scope", favoriteToy); // Error: favoriteToy is not defined (local variable cannot be accessed outside the function)
+
+console.log("global scope", favoriteSnack); // Output: poptarts (global variable can be accessed anywhere in the code)
