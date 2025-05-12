@@ -25,3 +25,30 @@ console.log(name); // Output: undefined (hoisting: variable is declared but not 
 name = "John"
 
 console.log(name); // Output: John (variable is now initialized)
+
+let x = 12;
+
+scope(); // Output: 33 (local variable x is accessed inside the function)
+console.log(x); // Output: 12 (global variable x is not affected by the local variable x in the function scope)
+
+function scope() {
+    let x = 33;
+    console.log(x)
+}
+
+// new part to examine
+let y = 22
+console.log("the first y", y); // Output: 22 (global variable y)
+
+function reassignY() {
+    console.log(y); // Output: 22 (global variable y is accessed inside the function)
+    y = 44;
+    console.log(y) // Output: 44 (local variable y is accessed inside the function)
+}
+
+reassignY(); // Output: 44 (local variable y is accessed inside the function)
+console.log(y); // Output: 44 (global variable y is now changed to 44 due to the assignment in the function)
+
+y = "ted"
+
+console.log("the second y", y); // Output: ted (global variable y is now changed to "ted")
