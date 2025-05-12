@@ -52,3 +52,25 @@ console.log(y); // Output: 44 (global variable y is now changed to 44 due to the
 y = "ted"
 
 console.log("the second y", y); // Output: ted (global variable y is now changed to "ted")
+
+// recursion example
+function go() {
+    console.log("GO!")
+    go();
+}
+
+// go(); // Output: ReferenceError: go is not defined (function is not defined yet)
+
+function countdown(startingNumber) {
+    if (startingNumber <= 0) {
+        console.log("Blast off!")
+        return; // Base case: to stop the recursion!
+    }
+
+    console.log(startingNumber);
+    countdown(startingNumber - 1);
+}
+
+let startingNumber = 10; // Global variable
+
+countdown(startingNumber)
